@@ -1,0 +1,89 @@
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 네비메뉴 -->
+	<nav class="main-nav dark transparent stick-fixed" id="wrap">
+
+	<div class="full-wrapper relative clearfix">
+		<%
+			if (check == null) {
+		%>
+		<a href="loginForm.jsp" /><img src="images/picture/login.png"></a>
+		<a href="joinForm.jsp" /><img src="images/picture/join.png"></a>
+		<%
+			} else {
+		%>
+		<b style="color: white"> <%
+ 	String name = (String) session.getAttribute("name");
+ 		out.print(name);
+ %>님 로그인 중입니다
+		</b>
+		<!-- 세션 값 받아오기 -->
+		<a href="logout.jsp" /><img src="images/picture/logout.png"></a> <a
+			href="updateForm.jsp" /><img src="images/picture/update.png"></a>
+		<%
+			}
+		%>
+
+		<div class="inner-nav desktop-nav">
+
+			<ul class="clearlist local-scroll">
+
+				<li><a href="#">커피이야기</a>
+					<ul id="sub_0">
+						<div>
+							<!-- 하위메뉴 마우스 커서 갖다댈시 확장 -->
+							<li><a href="1st_been.jsp">원두종류</a></li>
+							<li><a href="1st_country.jsp">나라별원두</a></li>
+						</div>
+					</ul></li>
+
+				<li><a href="#">회사 정보</a>
+					<ul id="sub_1">
+						<div>
+							<!-- 하위메뉴 마우스 커서 갖다댈시 확장 -->
+							<li><a href="map.jsp">위치</a></li>
+							<li><a href="ProJectName.jsp">프로잭트 명단</a></li>
+							<li><a href="info.jsp">회사소개</a></li>
+						</div>
+					</ul></li>
+
+				<li><a href="#">커뮤니티</a>
+					<ul id="sub_2">
+						<div>
+							<li><a href="providing.jsp">이벤트게시판</a></li>
+							<li><a href="solution.jsp">질문게시판</a></li>
+							<li><a href="smart_car.jsp">자유게시판</a></li>
+							<li><a href="smart_mobile.jsp">공지사항</a></li>
+						</div>
+					</ul></li>
+
+				<li><a href="#">Shop</a>
+					<ul id="sub_3">
+						<div>
+							<li><a href="dtg.jsp">구매내역</a></li>
+							<li><a href="and.jsp">장바구니</a></li>
+							<li><a href="avn.jsp">배송</a></li>
+							<li><a href="smart.jsp">결제</a></li>
+							<li><a href="feature.jsp">상품목록보기</a></li>
+						</div>
+					</ul></li>
+
+				<li><a href="#">관리자 메뉴</a>
+					<ul id="sub_4">
+						<div>
+							<li><a href="recruit.jsp">관리설정</a></li>
+						</div>
+					</ul></li>
+			</ul>
+		</div>
+	</div>
+	</nav>
+</body>
+</html>
